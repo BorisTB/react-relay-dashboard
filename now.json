@@ -1,7 +1,7 @@
 {
   "version": 2,
   "name": "react-relay-dashboard",
-  "alias": ["https://relay-dashboard.now.sh/"],
+  "alias": ["relay-dashboard.now.sh"],
   "routes": [
     { "src": "/graphql", "dest": "https://relay-dashboard-api.now.sh/graphql" },
     { "src": "/robots.txt", "dest": "/robots.txt" },
