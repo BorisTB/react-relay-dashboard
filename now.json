@@ -1,9 +1,9 @@
 {
   "version": 2,
   "name": "react-relay-dashboard",
-  "alias": ["https://app.relay-dashboard.now.sh/"],
+  "alias": ["https://relay-dashboard.now.sh/"],
   "routes": [
-    { "src": "/graphql", "dest": "https://relay-dashboard.now.sh/graphql" },
+    { "src": "/graphql", "dest": "https://relay-dashboard-api.now.sh/graphql" },
     { "src": "/robots.txt", "dest": "/robots.txt" },
     { "src": "/static/(.*)", "headers": { "cache-control": "s-maxage=31536000,immutable" }, "dest": "/static/$1" },
     { "src": "/favicon.ico", "dest": "/favicon.ico" },
