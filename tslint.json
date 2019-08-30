@@ -1,0 +1,17 @@
+{
+    "defaultSeverity": "error",
+    "linterOptions": {
+        "exclude": ["server", "**/serviceWorker.ts"]
+    },
+    "extends": [
+        "tslint:recommended",
+        "tslint-config-standard"
+    ],
+    "jsRules": {},
+    "rules": {
+        "interface-name": false,
+        "no-console": false,
+        "ordered-imports": false
+    },
+    "rulesDirectory": []
+}

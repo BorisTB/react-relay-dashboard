@@ -1,0 +1,6 @@
+{
+  "schema": "src/schema.graphql",
+  "src": "src",
+  "language": "typescript",
+  "watchman": "false"
+}

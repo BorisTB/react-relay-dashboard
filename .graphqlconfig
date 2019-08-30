@@ -1,0 +1,10 @@
+{
+  "schemaPath": "src/schema.graphql",
+  "extensions": {
+    "endpoints": {
+      "default": {
+        "url": "https://relay-dashboard.now.sh/graphql"
+      }
+    }
+  }
+}
