@@ -1255,6 +1255,11 @@
   resolved "https://registry.yarnpkg.com/@restart/context/-/context-2.1.4.tgz#a99d87c299a34c28bd85bb489cb07bfd23149c02"
   integrity sha512-INJYZQJP7g+IoDUh/475NlGiTeMfwTXUEr3tmRneckHIxNolGOW9CTq83S8cxq0CgJwwcMzMJFchxvlwe7Rk8Q==
 
+"@restart/hooks@^0.3.1":
+  version "0.3.12"
+  resolved "https://registry.yarnpkg.com/@restart/hooks/-/hooks-0.3.12.tgz#c68e6b4048d80ab51f6694cb6921bd091318f80f"
+  integrity sha512-nltMFo5JkYcnntf0Cs3Kq7jskrKeGcftAKOqbEEa74sxlx0bfO3RjBly2aiRb7hnsYJCB8/99l+acQcl2lnq1w==
+
 "@svgr/babel-plugin-add-jsx-attribute@^4.2.0":
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/@svgr/babel-plugin-add-jsx-attribute/-/babel-plugin-add-jsx-attribute-4.2.0.tgz#dadcb6218503532d6884b210e7f3c502caaa44b1"
@@ -9678,6 +9683,11 @@ react-error-overlay@^6.0.1:
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-6.0.1.tgz#b8d3cf9bb991c02883225c48044cb3ee20413e0f"
   integrity sha512-V9yoTr6MeZXPPd4nV/05eCBvGH9cGzc52FN8fs0O0TVQ3HYYf1n7EgZVtHbldRq5xU9zEzoXIITjYNIfxDDdUw==
 
+react-hook-form@^3.23.0:
+  version "3.23.0"
+  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-3.23.0.tgz#91f2fcd8f44d410797dad8d62e9d3eac5379264c"
+  integrity sha512-66NEHbghydmePcqFY6742xew7I1r7NTtW/0Lae+k3MMgoXnsMXtH28SmaSHhcSTYUPXA1/a3/PN/w8rgNDj73Q==
+
 react-is@^16.7.0, react-is@^16.8.1, react-is@^16.8.4, react-is@^16.8.6, react-is@^16.9.0:
   version "16.9.0"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.9.0.tgz#21ca9561399aad0ff1a7701c01683e8ca981edcb"
@@ -10017,6 +10027,13 @@ relay-config@^5.0.0:
   integrity sha512-EdVcVau4k92DgPrqm/UUSsRLp/33Wj+wU5fN5Yx6MsDx/h4ul1RWoA4n1XdC3cNAWKHs68V6N54iQ4TREw9d7g==
   dependencies:
     cosmiconfig "^5.0.5"
+
+relay-hooks@^1.2.5:
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/relay-hooks/-/relay-hooks-1.2.5.tgz#5bfe323be26446dea78ed1a99a32e56decaa81be"
+  integrity sha512-f74GfgWpx7SoGToXICB1geUl907DKrba/Uy0g8jBpy7LUaqKQDiiN0A0AbLxPLwCLv00RnVCOCB88RYfdyR+GQ==
+  dependencies:
+    "@restart/hooks" "^0.3.1"
 
 relay-runtime@5.0.0:
   version "5.0.0"
@@ -11375,10 +11392,10 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-typescript@3.5.3:
-  version "3.5.3"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.5.3.tgz#c830f657f93f1ea846819e929092f5fe5983e977"
-  integrity sha512-ACzBtm/PhXBDId6a6sDJfroT2pOWt/oOnk4/dElG5G33ZL776N3Y6/6bKZJBFpd+b05F3Ct9qDjMeJmRWtE2/g==
+typescript@^3.6.2:
+  version "3.6.2"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.6.2.tgz#105b0f1934119dde543ac8eb71af3a91009efe54"
+  integrity sha512-lmQ4L+J6mnu3xweP8+rOrUwzmN+MRAj7TgtJtDaXE5PMyX2kCrklhg3rvOsOIfNeAWMQWO2F1GPc1kMD2vLAfw==
 
 ua-parser-js@^0.7.18:
   version "0.7.20"

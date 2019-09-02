@@ -1,41 +1,47 @@
-import React, { useState } from 'react'
+import React from 'react'
 import {
   Box,
   Button,
   TextField,
-  Typography
+  Typography,
+  styled
 } from '@material-ui/core'
-import { styled } from 'theme'
+import useForm from 'react-hook-form'
+import { LoginMutation, LoginInput } from 'mutations'
 import { Form } from 'components'
 
-const ControlWrapper = styled(TextField)`
-  transition: all .150s ease;
-
-  input {
-    background: ${({ theme }) => theme.palette.background.paper};
-    transition: all .250s ease;
-
-    &:disabled {
-      background: ${({ theme }) => theme.palette.action.disabledBackground};
+const ControlWrapper = styled(TextField)(({ theme }) => ({
+  'transition': 'all 150ms ease',
+  '& input': {
+    'background': theme.palette.background.paper,
+    'transition': 'all 250ms ease',
+    '&:disabled': {
+      background: theme.palette.action.disabledBackground,
     }
+  },
+  '&:focus-within': {
+    boxShadow: theme.shadows[8],
+    transform: 'scale(1.1)',
+    zIndex: 1
   }
-
-  &:focus-within {
-    box-shadow: ${({ theme }) => theme.shadows[8]};
-    transform: scale(1.1);
-    z-index: 1;
-  }
-`
-
-const InputField: React.FC<any> = (props) => (
-  <ControlWrapper variant='outlined' margin='dense' fullWidth {...props} />
-)
+}))
 
 const Login: React.FC = () => {
-  const [sending, setSending] = useState(false)
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-  }
+  const [login, { loading }] = LoginMutation.useMutation()
+  const { handleSubmit, register } = useForm<LoginInput>()
+
+  const onSubmit = handleSubmit(async (data) => {
+    try {
+      await login({
+        variables: {
+          data
+        }
+      })
+
+    } catch (err) {
+      console.error(err)
+    }
+  })
 
   return (
     <>
@@ -45,13 +51,33 @@ const Login: React.FC = () => {
         </Box>
       </Typography>
 
-      <Form onSubmit={handleSubmit}>
-        <fieldset disabled={sending}>
-          <InputField disabled={sending} placeholder='user@example.com' />
-          <InputField disabled={sending} type='password' placeholder='*******' />
+      <Form onSubmit={onSubmit}>
+        <fieldset disabled={loading}>
+          <ControlWrapper
+            variant='outlined'
+            margin='dense'
+            fullWidth
+            required
+            disabled={loading}
+            name='email'
+            type='email'
+            placeholder='user@example.com'
+            inputRef={register}
+          />
+          <ControlWrapper
+            variant='outlined'
+            margin='dense'
+            fullWidth
+            required
+            disabled={loading}
+            name='password'
+            type='password'
+            placeholder='••••••••'
+            inputRef={register}
+          />
         </fieldset>
 
-        <Button disabled={sending} fullWidth onClick={() => { setSending(sending => !sending) }}>Click</Button>
+        <Button type='submit' disabled={loading} fullWidth>Click</Button>
       </Form>
     </>
   )
