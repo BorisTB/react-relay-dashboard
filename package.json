@@ -6,17 +6,19 @@
   "dependencies": {
     "@emotion/core": "^10.0.16",
     "@emotion/styled": "^10.0.15",
-    "@material-ui/core": "^4.3.3",
+    "@material-ui/core": "^4.4.0",
+    "@material-ui/icons": "^4.2.1",
     "@types/jest": "24.0.18",
     "@types/node": "12.7.2",
     "@types/react": "16.9.2",
     "@types/react-dom": "16.9.0",
     "@types/react-relay": "^5.0.0",
+    "@types/use-persisted-state": "^0.3.0",
     "babel-plugin-relay": "^5.0.0",
     "emotion-theming": "^10.0.14",
     "farce": "^0.2.8",
     "found": "^0.4.7",
-    "found-relay": "^0.4.1",
+    "found-relay": "^0.4.3",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-hook-form": "^3.23.0",
@@ -24,7 +26,8 @@
     "react-relay-network-modern": "^4.0.4",
     "react-scripts": "3.1.1",
     "relay-hooks": "^1.2.5",
-    "typescript": "^3.6.2"
+    "typescript": "^3.6.2",
+    "use-persisted-state": "^0.3.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -32,6 +35,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "tslint -c tslint.json src/**/*.{ts,tsx} --fix --format verbose --project .",
+    "format": "tslint-config-prettier-check ./tslint.json",
     "relay": "relay-compiler",
     "get:schema": "graphql get-schema -e default"
   },

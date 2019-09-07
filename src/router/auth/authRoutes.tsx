@@ -2,19 +2,18 @@ import React from 'react'
 import { makeRouteConfig, Route } from 'found'
 import { graphql } from 'babel-plugin-relay/macro'
 import publicRoutes from '../public/publicRoutes'
-import Layout from 'layout'
-import { Dashboard } from 'views'
+import { Private } from 'layout'
+import { Dashboard, ProfileSettings } from 'views'
 import { unsetLoggedUser } from 'utils/auth'
 
 const routes = makeRouteConfig(
   <Route
     path='/'
-    Component={Layout}
+    Component={Private}
     query={graphql`
       query authRoutes_LayoutQuery {
         me {
           id
-          ...Layout_me
         }
       }
     `}
@@ -30,6 +29,19 @@ const routes = makeRouteConfig(
       }
     }}>
     <Route Component={Dashboard} />
+    <Route path='settings'>
+      <Route
+        path='profile'
+        Component={ProfileSettings}
+        query={graphql`
+          query authRoutes_ProfileSettingsQuery {
+            user: me {
+              ...ProfileSettings_user
+            }
+          }
+        `}
+      />
+    </Route>
   </Route>
 )
 

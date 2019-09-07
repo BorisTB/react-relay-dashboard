@@ -11,4 +11,4 @@ const Public: React.FC = ({ children }) => (
   </Container>
 )
 
-export default Public
+export { Public }
