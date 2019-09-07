@@ -11,9 +11,7 @@ const AppBarStyled = styled(AppBar)(({ theme }) => ({
 
 const Header: React.FC<HeaderProps> = ({ toggleSidebar }) => (
   <AppBarStyled position='fixed' color='default' elevation={0}>
-    <Toolbar onClick={toggleSidebar}>
-      test
-    </Toolbar>
+    <Toolbar onClick={toggleSidebar}>test</Toolbar>
   </AppBarStyled>
 )
 

@@ -2,7 +2,8 @@ import React from 'react'
 import {
   Drawer,
   List,
-  ListItem, ListItemIcon,
+  ListItem,
+  ListItemIcon,
   ListItemText,
   makeStyles,
   styled
@@ -16,7 +17,7 @@ const DrawerStyled = styled(Drawer)(({ theme }) => ({
   overflowX: 'hidden',
 
   '&': {
-    width: ({ open }) => open ? '240px' : '40px',
+    width: ({ open }) => (open ? '240px' : '40px'),
     transition: theme.transitions.create(['width'], {
       easing: theme.transitions.easing.easeOut,
       duration: theme.transitions.duration.enteringScreen
@@ -24,7 +25,7 @@ const DrawerStyled = styled(Drawer)(({ theme }) => ({
   },
 
   '& .MuiDrawer-paper': {
-    width: ({ open }) => open ? 240 : 40,
+    width: ({ open }) => (open ? 240 : 40),
     overflowX: 'hidden',
     transition: theme.transitions.create(['width'], {
       easing: theme.transitions.easing.easeOut,
@@ -39,8 +40,7 @@ const SidebarContent = styled('div')(({ theme }) => ({
 }))
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-  },
+  root: {},
   active: {
     color: theme.palette.primary.main
   },
@@ -60,15 +60,22 @@ const Sidebar: React.FC<SidebarProps> = ({ open }) => {
     <DrawerStyled variant='permanent' open={open}>
       <SidebarContent>
         <List component='nav'>
-          {
-            menuItems.map(({ Icon, to, textPrimary }) => (
-              <ListItem
-                key={to} button component={Link} to={to} exact className={classes.root} activeClassName={classes.active}>
-                <ListItemIcon className={classes.icon}><Icon /></ListItemIcon>
-                <ListItemText primary={textPrimary} />
-              </ListItem>
-            ))
-          }
+          {menuItems.map(({ Icon, to, textPrimary }) => (
+            <ListItem
+              key={to}
+              button
+              component={Link}
+              to={to}
+              exact
+              className={classes.root}
+              activeClassName={classes.active}
+            >
+              <ListItemIcon className={classes.icon}>
+                <Icon />
+              </ListItemIcon>
+              <ListItemText primary={textPrimary} />
+            </ListItem>
+          ))}
         </List>
       </SidebarContent>
     </DrawerStyled>

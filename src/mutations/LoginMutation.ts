@@ -46,7 +46,8 @@ const defaultConfig: MutationConfig<MutationType> = {
 }
 
 const LoginMutation: MutationHelper<MutationType> = {
-  useMutation: (userConfig = defaultConfig, env) => useMutation<MutationType>(LOGIN_MUTATION, userConfig, env)
+  useMutation: (userConfig = defaultConfig, env) =>
+    useMutation<MutationType>(LOGIN_MUTATION, userConfig, env)
 }
 
 export { LOGIN_MUTATION, LoginMutation }

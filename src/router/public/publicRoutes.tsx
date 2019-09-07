@@ -25,7 +25,8 @@ const routes = makeRouteConfig(
 
         return <Component {...props} />
       }
-    }}>
+    }}
+  >
     <Route Component={Login} />
   </Route>
 )

@@ -13,6 +13,4 @@ const menuItems = [
   }
 ]
 
-export {
-  menuItems
-}
+export { menuItems }

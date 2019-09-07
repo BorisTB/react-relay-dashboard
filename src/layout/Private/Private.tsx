@@ -27,9 +27,7 @@ const Private: React.FC<PrivateProps> = ({ children }) => {
       <Header toggleSidebar={toggleSidebar} />
       <Sidebar open={sidebarOpen} />
       <Box display='flex' flexGrow={1} height={1}>
-        <Main>
-          {children}
-        </Main>
+        <Main>{children}</Main>
       </Box>
     </Box>
   )

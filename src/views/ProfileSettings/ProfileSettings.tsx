@@ -8,9 +8,7 @@ interface ProfileSettingsProps {
 }
 
 const ProfileSettings: React.FC<ProfileSettingsProps> = ({ user }) => (
-  <div>
-    {user && user.name}
-  </div>
+  <div>{user && user.name}</div>
 )
 
 export default createFragmentContainer(ProfileSettings, {

@@ -1,7 +1,6 @@
 import { createMuiTheme } from '@material-ui/core'
 import lightBlue from '@material-ui/core/colors/lightBlue'
-import untypedStyled, { CreateStyled } from '@emotion/styled'
-import { Theme } from '@material-ui/core/styles'
+import untypedStyled from '@emotion/styled'
 
 const theme = createMuiTheme({
   mixins: {
@@ -14,6 +13,6 @@ const theme = createMuiTheme({
   }
 })
 
-export const styled = untypedStyled as CreateStyled<Theme>
+export const styled = untypedStyled
 
 export default theme

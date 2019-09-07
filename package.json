@@ -35,7 +35,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "tslint -c tslint.json src/**/*.{ts,tsx} --fix --format verbose --project .",
-    "format": "tslint-config-prettier-check ./tslint.json",
+    "format": "prettier-tslint fix 'src/**/*.{ts,tsx}'",
+    "postformat": "npm run relay",
     "relay": "relay-compiler",
     "get:schema": "graphql get-schema -e default"
   },
@@ -56,6 +57,8 @@
   },
   "devDependencies": {
     "graphql-cli": "^3.0.14",
+    "prettier": "^1.18.2",
+    "prettier-tslint": "^0.4.2",
     "relay-compiler": "^5.0.0",
     "relay-compiler-language-typescript": "^4.7.0",
     "relay-config": "^5.0.0",

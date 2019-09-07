@@ -28,5 +28,4 @@ declare module 'found' {
   export interface Router {
     replaceRouteConfig: (routes: RouteConfig) => void
   }
-
 }

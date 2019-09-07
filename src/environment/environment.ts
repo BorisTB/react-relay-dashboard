@@ -1,4 +1,9 @@
-import { ConnectionHandler, Environment, RecordSource, Store } from 'relay-runtime'
+import {
+  ConnectionHandler,
+  Environment,
+  RecordSource,
+  Store
+} from 'relay-runtime'
 import {
   RelayNetworkLayer,
   urlMiddleware,
@@ -29,10 +34,18 @@ const handlerProvider = (handle: string) => {
   }
 }
 
-let environment = new Environment({ network, store: new Store(new RecordSource()), handlerProvider })
+let environment = new Environment({
+  network,
+  store: new Store(new RecordSource()),
+  handlerProvider
+})
 
 export const resetEnvironment = () => {
-  environment = new Environment({ network, store: new Store(new RecordSource()), handlerProvider })
+  environment = new Environment({
+    network,
+    store: new Store(new RecordSource()),
+    handlerProvider
+  })
 }
 
 export default environment

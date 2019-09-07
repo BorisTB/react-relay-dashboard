@@ -1,22 +1,16 @@
 import React from 'react'
-import {
-  Box,
-  Button,
-  TextField,
-  Typography,
-  styled
-} from '@material-ui/core'
+import { Box, Button, TextField, Typography, styled } from '@material-ui/core'
 import useForm from 'react-hook-form'
 import { LoginMutation, LoginInput } from 'mutations'
 import { Form } from 'components'
 
 const ControlWrapper = styled(TextField)(({ theme }) => ({
-  'transition': 'all 150ms ease',
+  transition: 'all 150ms ease',
   '& input': {
-    'background': theme.palette.background.paper,
-    'transition': 'all 250ms ease',
+    background: theme.palette.background.paper,
+    transition: 'all 250ms ease',
     '&:disabled': {
-      background: theme.palette.action.disabledBackground,
+      background: theme.palette.action.disabledBackground
     }
   },
   '&:focus-within': {
@@ -37,7 +31,6 @@ const Login: React.FC = () => {
           data
         }
       })
-
     } catch (err) {
       console.error(err)
     }
@@ -77,7 +70,9 @@ const Login: React.FC = () => {
           />
         </fieldset>
 
-        <Button type='submit' disabled={loading} fullWidth>Click</Button>
+        <Button type='submit' disabled={loading} fullWidth>
+          Click
+        </Button>
       </Form>
     </>
   )

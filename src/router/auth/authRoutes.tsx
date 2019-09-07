@@ -27,7 +27,8 @@ const routes = makeRouteConfig(
 
         return <Component {...props} />
       }
-    }}>
+    }}
+  >
     <Route Component={Dashboard} />
     <Route path='settings'>
       <Route
