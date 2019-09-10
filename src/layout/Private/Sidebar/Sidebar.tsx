@@ -8,6 +8,7 @@ import {
   makeStyles,
   styled
 } from '@material-ui/core'
+import { fade } from '@material-ui/core/styles'
 import { Link } from 'found'
 import { menuItems } from './menuItems'
 
@@ -40,9 +41,23 @@ const SidebarContent = styled('div')(({ theme }) => ({
 }))
 
 const useStyles = makeStyles((theme) => ({
-  root: {},
+  root: {
+    color: theme.palette.text.secondary,
+    textDecoration: 'none',
+    letterSpacing: '0.05rem',
+    background: `linear-gradient(to right, ${fade(theme.palette.primary.main, 0.1)}, ${fade(theme.palette.primary.main, 0.1)})`,
+    backgroundRepeat: 'no-repeat',
+    backgroundPositionX: -250,
+    transition: theme.transitions.create(['background'], {
+      easing: theme.transitions.easing.easeOut,
+      duration: theme.transitions.duration.standard
+    })
+  },
   active: {
-    color: theme.palette.primary.main
+    color: theme.palette.primary.dark,
+    fontWeight: 500,
+    backgroundPositionX: 0,
+    borderRight: `3px solid ${theme.palette.primary.main}`
   },
   icon: {
     color: 'inherit'
@@ -63,7 +78,6 @@ const Sidebar: React.FC<SidebarProps> = ({ open }) => {
           {menuItems.map(({ Icon, to, textPrimary }) => (
             <ListItem
               key={to}
-              button
               component={Link}
               to={to}
               exact
@@ -71,9 +85,9 @@ const Sidebar: React.FC<SidebarProps> = ({ open }) => {
               activeClassName={classes.active}
             >
               <ListItemIcon className={classes.icon}>
-                <Icon />
+                <Icon fontSize='small' />
               </ListItemIcon>
-              <ListItemText primary={textPrimary} />
+              <ListItemText primary={textPrimary} primaryTypographyProps={{ variant: 'inherit' }} />
             </ListItem>
           ))}
         </List>

@@ -1,19 +1,11 @@
 import React from 'react'
 import { RelayEnvironmentProvider } from 'relay-hooks/lib'
-import { CssBaseline, MuiThemeProvider, withStyles } from '@material-ui/core'
+import { CssBaseline, MuiThemeProvider } from '@material-ui/core'
 import { ThemeProvider } from 'emotion-theming'
 import { Resolver } from 'found-relay'
 import theme from './theme'
 import Router from 'router'
 import environment from 'environment'
-
-const styles = () => ({
-  '@global': {
-    html: {
-      overflow: 'hidden'
-    }
-  }
-})
 
 const App: React.FC = () => (
   <RelayEnvironmentProvider environment={environment}>
@@ -26,4 +18,4 @@ const App: React.FC = () => (
   </RelayEnvironmentProvider>
 )
 
-export default withStyles(styles)(App)
+export default App

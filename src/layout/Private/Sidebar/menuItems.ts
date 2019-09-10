@@ -1,15 +1,15 @@
-import { DashboardRounded, SettingsRounded } from '@material-ui/icons'
+import { DashboardOutlined, SettingsOutlined } from '@material-ui/icons'
 
 const menuItems = [
   {
     to: '/',
     textPrimary: 'Dashboard',
-    Icon: DashboardRounded
+    Icon: DashboardOutlined
   },
   {
     to: '/settings/profile',
     textPrimary: 'Profile Settings',
-    Icon: SettingsRounded
+    Icon: SettingsOutlined
   }
 ]
 

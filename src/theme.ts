@@ -10,6 +10,15 @@ const theme = createMuiTheme({
   },
   palette: {
     primary: lightBlue
+  },
+  overrides: {
+    MuiCssBaseline: {
+      '@global': {
+        html: {
+          overflow: 'hidden'
+        }
+      }
+    }
   }
 })
 
