@@ -1,9 +1,9 @@
-import { styled } from 'theme'
+import { styled } from '@material-ui/core'
 
-const Form = styled.form`
-  & > fieldset {
-    border: none;
+const Form = styled('form')({
+  fieldset: {
+    border: 'none'
   }
-`
+})
 
 export { Form }

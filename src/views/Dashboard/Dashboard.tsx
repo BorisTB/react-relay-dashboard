@@ -1,12 +1,69 @@
 import React from 'react'
 import { Card, CardContent, Grid } from '@material-ui/core'
+import { EChartOption } from 'echarts'
 import {
   Page,
   PageSection,
   PageSectionContent,
   PageSectionTitle
 } from 'components'
-import Item from './DashboardItem'
+import { DashboardWidget } from './DashboardWidget'
+
+const option: EChartOption = {
+  title: {
+    left: 'center',
+    top: 20
+  },
+
+  tooltip : {
+    trigger: 'item',
+    formatter: '{a} <br/>{b} : {c} ({d}%)'
+  },
+
+  visualMap: [{
+    show: false,
+    min: 80,
+    max: 600,
+    inRange: {
+      colorLightness: [0, 1]
+    }
+  }],
+  series : [
+    {
+      name: '访问来源',
+      type: 'pie',
+      radius : '55%',
+      center: ['50%', '50%'],
+      data: [
+        { value: 335, name: 'Dogs' },
+        { value: 310, name: 'Cats' },
+        { value: 274, name: 'Birds' },
+        { value: 235, name: 'Lizards' },
+        { value: 400, name: 'Fish' }
+      ].sort(
+        (a, b) => a.value - b.value),
+      roseType: 'radius',
+      labelLine: {
+        normal: {
+          smooth: 0.2,
+          length: 10,
+          length2: 20
+        }
+      },
+      itemStyle: {
+        normal: {
+          color: '#c23531',
+          shadowBlur: 40,
+          shadowColor: 'rgba(0, 0, 0, 0.5)'
+        }
+      },
+
+      animationType: 'scale',
+      animationEasing: 'elasticOut',
+      animationDelay: () => Math.random() * 200
+    }
+  ]
+}
 
 const Dashboard: React.FC = () => {
   return (
@@ -16,11 +73,10 @@ const Dashboard: React.FC = () => {
 
         <PageSectionContent>
           <Grid container spacing={2}>
-            <Item />
-            <Item />
-            <Item />
-            <Item />
-            <Item />
+            <DashboardWidget chartOption={option} />
+            <DashboardWidget chartOption={option} />
+            <DashboardWidget chartOption={option} />
+            <DashboardWidget chartOption={option} />
           </Grid>
         </PageSectionContent>
       </PageSection>

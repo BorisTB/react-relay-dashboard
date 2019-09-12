@@ -1,8 +1,7 @@
 import { createMuiTheme } from '@material-ui/core'
 import lightBlue from '@material-ui/core/colors/lightBlue'
-import untypedStyled from '@emotion/styled'
 
-const theme = createMuiTheme({
+const muiThemeLight = createMuiTheme({
   mixins: {
     toolbar: {
       minHeight: 60
@@ -35,6 +34,4 @@ const theme = createMuiTheme({
   }
 })
 
-export const styled = untypedStyled
-
-export default theme
+export { muiThemeLight }

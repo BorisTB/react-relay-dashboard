@@ -1,7 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { registerEchartsThemes } from 'theme'
 import App from './App'
 import * as serviceWorker from './serviceWorker'
+
+registerEchartsThemes()
 
 ReactDOM.render(<App />, document.getElementById('root'))
 
