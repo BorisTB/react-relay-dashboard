@@ -13,12 +13,15 @@ const StyledGrid = styled(
   }: PageSectionProps & Omit<GridProps, keyof PageSectionProps>) => (
     <Grid {...props} />
   )
-)({
-  flex: ({ flex }) => flex,
-  flexWrap: 'nowrap'
-}, {
-  name: 'PageSection'
-})
+)(
+  {
+    flex: ({ flex }) => flex,
+    flexWrap: 'nowrap'
+  },
+  {
+    name: 'PageSection'
+  }
+)
 
 const PageSection: React.FC<PageSectionProps & GridProps> = (props) => (
   <StyledGrid direction='column' item container spacing={2} {...props} />

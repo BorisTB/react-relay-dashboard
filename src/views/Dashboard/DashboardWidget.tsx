@@ -8,12 +8,17 @@ interface DashboardWidgetProps {
   chartOption?: EChartOption
 }
 
-const DashboardWidget: React.FC<DashboardWidgetProps> = ({ children, chartOption }) => (
+const DashboardWidget: React.FC<DashboardWidgetProps> = ({
+  children,
+  chartOption
+}) => (
   <Grid item xs={12} sm={6} md>
     <Card>
       <CardContent>
         {children}
-        {chartOption && <ECharts style={{ height: '130px' }} option={chartOption} />}
+        {chartOption && (
+          <ECharts style={{ height: '130px' }} option={chartOption} />
+        )}
       </CardContent>
     </Card>
   </Grid>

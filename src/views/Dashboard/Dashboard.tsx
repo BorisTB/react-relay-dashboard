@@ -1,13 +1,15 @@
 import React from 'react'
-import { Card, CardContent, Grid } from '@material-ui/core'
+import { Grid } from '@material-ui/core'
 import { EChartOption } from 'echarts'
 import {
   Page,
   PageSection,
   PageSectionContent,
-  PageSectionTitle
+  PageSectionTitle,
+  Table
 } from 'components'
 import { DashboardWidget } from './DashboardWidget'
+import data from 'mock/usersMock'
 
 const option: EChartOption = {
   title: {
@@ -15,24 +17,26 @@ const option: EChartOption = {
     top: 20
   },
 
-  tooltip : {
+  tooltip: {
     trigger: 'item',
     formatter: '{a} <br/>{b} : {c} ({d}%)'
   },
 
-  visualMap: [{
-    show: false,
-    min: 80,
-    max: 600,
-    inRange: {
-      colorLightness: [0, 1]
+  visualMap: [
+    {
+      show: false,
+      min: 80,
+      max: 600,
+      inRange: {
+        colorLightness: [0, 1]
+      }
     }
-  }],
-  series : [
+  ],
+  series: [
     {
       name: '访问来源',
       type: 'pie',
-      radius : '55%',
+      radius: '55%',
       center: ['50%', '50%'],
       data: [
         { value: 335, name: 'Dogs' },
@@ -40,8 +44,7 @@ const option: EChartOption = {
         { value: 274, name: 'Birds' },
         { value: 235, name: 'Lizards' },
         { value: 400, name: 'Fish' }
-      ].sort(
-        (a, b) => a.value - b.value),
+      ].sort((a, b) => a.value - b.value),
       roseType: 'radius',
       labelLine: {
         normal: {
@@ -85,9 +88,19 @@ const Dashboard: React.FC = () => {
         <PageSectionTitle>Recent Data</PageSectionTitle>
 
         <PageSectionContent flex={1}>
-          <Card>
-            <CardContent>test</CardContent>
-          </Card>
+          <Grid item xs={12}>
+            <Table
+              columns={[
+                { field: 'firstName', title: 'First name' },
+                { field: 'lastName', title: 'Last name' },
+                { field: 'email', title: 'Email' },
+                { field: 'animal', title: 'Animal' },
+                { field: 'city', title: 'City' }
+              ]}
+              data={data}
+              options={{ showTitle: false }}
+            />
+          </Grid>
         </PageSectionContent>
       </PageSection>
     </Page>

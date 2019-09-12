@@ -11,7 +11,8 @@ const Main = styled('main')(({ theme }) => ({
   display: 'flex',
   flex: 1,
   marginTop: theme.mixins.toolbar.minHeight,
-  padding: theme.spacing(2)
+  padding: theme.spacing(2),
+  overflow: 'auto'
 }))
 
 interface PrivateProps {

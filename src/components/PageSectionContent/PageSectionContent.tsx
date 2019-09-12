@@ -8,20 +8,22 @@ interface PageSectionContentProps {
 
 const StyledGrid = styled(
   ({
-     flex,
-     ...props
-   }: PageSectionContentProps & Omit<GridProps, keyof PageSectionContentProps>) => (
-    <Grid {...props} />
-  )
-)({
-  flex: ({ flex }) => flex
-}, {
-  name: 'PageSectionContent'
-})
-
-const PageSectionContent: React.FC<PageSectionContentProps & GridProps> = (props) => (
-  <StyledGrid item container {...props} />
+    flex,
+    ...props
+  }: PageSectionContentProps &
+    Omit<GridProps, keyof PageSectionContentProps>) => <Grid {...props} />
+)(
+  {
+    flex: ({ flex }) => flex
+  },
+  {
+    name: 'PageSectionContent'
+  }
 )
+
+const PageSectionContent: React.FC<
+  PageSectionContentProps & GridProps
+> = (props) => <StyledGrid item container {...props} />
 
 PageSectionContent.defaultProps = {
   flex: 'auto'

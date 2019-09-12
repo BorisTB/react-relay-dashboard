@@ -13,6 +13,9 @@ const muiThemeLight = createMuiTheme({
   props: {
     MuiCard: {
       elevation: 3
+    },
+    MuiPaper: {
+      elevation: 3
     }
   },
   shape: {
