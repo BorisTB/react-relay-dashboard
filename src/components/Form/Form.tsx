@@ -6,4 +6,4 @@ const Form = styled.form`
   }
 `
 
-export default Form
+export { Form }

@@ -11,6 +11,19 @@ const theme = createMuiTheme({
   palette: {
     primary: lightBlue
   },
+  props: {
+    MuiCard: {
+      elevation: 3
+    }
+  },
+  shape: {
+    borderRadius: 16
+  },
+  typography: {
+    h6: {
+      fontSize: '1rem'
+    }
+  },
   overrides: {
     MuiCssBaseline: {
       '@global': {

@@ -45,7 +45,10 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.text.secondary,
     textDecoration: 'none',
     letterSpacing: '0.05rem',
-    background: `linear-gradient(to right, ${fade(theme.palette.primary.main, 0.1)}, ${fade(theme.palette.primary.main, 0.1)})`,
+    background: `linear-gradient(to right, ${fade(
+      theme.palette.primary.main,
+      0.1
+    )}, ${fade(theme.palette.primary.main, 0.1)})`,
     backgroundRepeat: 'no-repeat',
     backgroundPositionX: -250,
     transition: theme.transitions.create(['background'], {
@@ -87,7 +90,10 @@ const Sidebar: React.FC<SidebarProps> = ({ open }) => {
               <ListItemIcon className={classes.icon}>
                 <Icon fontSize='small' />
               </ListItemIcon>
-              <ListItemText primary={textPrimary} primaryTypographyProps={{ variant: 'inherit' }} />
+              <ListItemText
+                primary={textPrimary}
+                primaryTypographyProps={{ variant: 'inherit' }}
+              />
             </ListItem>
           ))}
         </List>
