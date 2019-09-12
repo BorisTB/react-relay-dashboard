@@ -2,7 +2,6 @@ import React from 'react'
 import { Box, Button, TextField, Typography, styled } from '@material-ui/core'
 import useForm from 'react-hook-form'
 import { LoginMutation, LoginInput } from 'mutations'
-import { Form } from 'components'
 
 const ControlWrapper = styled(TextField)(({ theme }) => ({
   transition: 'all 150ms ease',
@@ -44,7 +43,7 @@ const Login: React.FC = () => {
         </Box>
       </Typography>
 
-      <Form onSubmit={onSubmit}>
+      <form onSubmit={onSubmit}>
         <fieldset disabled={loading}>
           <ControlWrapper
             variant='outlined'
@@ -73,7 +72,7 @@ const Login: React.FC = () => {
         <Button type='submit' disabled={loading} fullWidth>
           Click
         </Button>
-      </Form>
+      </form>
     </>
   )
 }

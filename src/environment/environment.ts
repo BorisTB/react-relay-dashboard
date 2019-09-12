@@ -8,7 +8,7 @@ import {
   RelayNetworkLayer,
   urlMiddleware,
   authMiddleware
-} from 'react-relay-network-modern/es'
+} from 'react-relay-network-modern/lib'
 import { getAuthToken } from 'utils/auth'
 
 const network = new RelayNetworkLayer(

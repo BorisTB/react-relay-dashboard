@@ -31,6 +31,9 @@ const muiThemeLight = createMuiTheme({
       '@global': {
         html: {
           overflow: 'hidden'
+        },
+        fieldset: {
+          border: 'none'
         }
       }
     }
