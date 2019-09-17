@@ -3,7 +3,7 @@ import { makeRouteConfig, Route } from 'found'
 import { graphql } from 'babel-plugin-relay/macro'
 import publicRoutes from '../public/publicRoutes'
 import { Private } from 'layout'
-import { Dashboard, ProfileSettings } from 'views'
+import { Dashboard, ProfileSettingsFragmentContainer } from 'views'
 import { unsetLoggedUser } from 'utils/auth'
 
 const routes = makeRouteConfig(
@@ -33,7 +33,7 @@ const routes = makeRouteConfig(
     <Route path='settings'>
       <Route
         path='profile'
-        Component={ProfileSettings}
+        Component={ProfileSettingsFragmentContainer}
         query={graphql`
           query authRoutes_ProfileSettingsQuery {
             user: me {

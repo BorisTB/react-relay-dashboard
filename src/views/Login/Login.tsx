@@ -1,23 +1,8 @@
 import React from 'react'
-import { Box, Button, TextField, Typography, styled } from '@material-ui/core'
+import { Box, Typography } from '@material-ui/core'
 import useForm from 'react-hook-form'
 import { LoginMutation, LoginInput } from 'mutations'
-
-const ControlWrapper = styled(TextField)(({ theme }) => ({
-  transition: 'all 150ms ease',
-  '& input': {
-    background: theme.palette.background.paper,
-    transition: 'all 250ms ease',
-    '&:disabled': {
-      background: theme.palette.action.disabledBackground
-    }
-  },
-  '&:focus-within': {
-    boxShadow: theme.shadows[8],
-    transform: 'scale(1.1)',
-    zIndex: 1
-  }
-}))
+import { LoginForm } from './LoginForm'
 
 const Login: React.FC = () => {
   const [login, { loading }] = LoginMutation.useMutation()
@@ -43,38 +28,9 @@ const Login: React.FC = () => {
         </Box>
       </Typography>
 
-      <form onSubmit={onSubmit}>
-        <fieldset disabled={loading}>
-          <ControlWrapper
-            variant='outlined'
-            margin='dense'
-            fullWidth
-            required
-            disabled={loading}
-            name='email'
-            type='email'
-            placeholder='user@example.com'
-            inputRef={register}
-          />
-          <ControlWrapper
-            variant='outlined'
-            margin='dense'
-            fullWidth
-            required
-            disabled={loading}
-            name='password'
-            type='password'
-            placeholder='••••••••'
-            inputRef={register}
-          />
-        </fieldset>
-
-        <Button type='submit' disabled={loading} fullWidth>
-          Click
-        </Button>
-      </form>
+      <LoginForm onSubmit={onSubmit} disabled={loading} register={register}/>
     </>
   )
 }
 
-export default Login
+export { Login }

@@ -11,7 +11,7 @@ const ProfileSettings: React.FC<ProfileSettingsProps> = ({ user }) => (
   <div>{user && user.name}</div>
 )
 
-export default createFragmentContainer(ProfileSettings, {
+const ProfileSettingsFragmentContainer = createFragmentContainer(ProfileSettings, {
   user: graphql`
     fragment ProfileSettings_user on User {
       id
@@ -21,3 +21,8 @@ export default createFragmentContainer(ProfileSettings, {
     }
   `
 })
+
+export {
+  ProfileSettings,
+  ProfileSettingsFragmentContainer
+}
