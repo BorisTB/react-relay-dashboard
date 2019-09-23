@@ -3,7 +3,7 @@
   "name": "react-relay-dashboard",
   "alias": ["relay-dashboard.now.sh"],
   "env": {
-    "CI": true
+    "CI": "true"
   },
   "routes": [
     { "src": "/graphql", "dest": "https://relay-dashboard-api.now.sh/graphql" },
