@@ -2,18 +2,13 @@ import React from 'react'
 import { Grid, styled } from '@material-ui/core'
 import { GridProps } from '@material-ui/core/Grid'
 
-interface PageSectionProps {
+export interface PageSectionProps extends GridProps {
   flex?: 1 | 0 | 'auto'
 }
 
-const StyledGrid = styled(
-  ({
-    flex,
-    ...props
-  }: PageSectionProps & Omit<GridProps, keyof PageSectionProps>) => (
-    <Grid {...props} />
-  )
-)(
+const StyledGrid = styled(({ flex, ...props }: PageSectionProps) => (
+  <Grid {...props} />
+))(
   {
     flex: ({ flex }) => flex,
     flexWrap: 'nowrap'
@@ -23,8 +18,15 @@ const StyledGrid = styled(
   }
 )
 
-const PageSection: React.FC<PageSectionProps & GridProps> = (props) => (
-  <StyledGrid direction='column' item container spacing={2} {...props} />
+const PageSection: React.FC<PageSectionProps> = (props) => (
+  <StyledGrid {...props} />
 )
+
+PageSection.defaultProps = {
+  direction: 'column',
+  item: true,
+  container: true,
+  spacing: 2
+}
 
 export { PageSection }

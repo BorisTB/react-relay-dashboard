@@ -22,6 +22,7 @@ const muiThemeLight = createMuiTheme({
     borderRadius: 16
   },
   typography: {
+    fontSize: 14,
     h6: {
       fontSize: '1rem'
     }
@@ -30,11 +31,17 @@ const muiThemeLight = createMuiTheme({
     MuiCssBaseline: {
       '@global': {
         html: {
+          fontSize: '14px',
           overflow: 'hidden'
         },
         fieldset: {
           border: 'none'
         }
+      }
+    },
+    MuiInputBase: {
+      input: {
+        borderRadius: 16
       }
     }
   }

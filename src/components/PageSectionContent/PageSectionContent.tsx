@@ -2,17 +2,13 @@ import React from 'react'
 import { Grid, styled } from '@material-ui/core'
 import { GridProps } from '@material-ui/core/Grid'
 
-interface PageSectionContentProps {
+export interface PageSectionContentProps extends GridProps {
   flex?: 1 | 0 | 'auto'
 }
 
-const StyledGrid = styled(
-  ({
-    flex,
-    ...props
-  }: PageSectionContentProps &
-    Omit<GridProps, keyof PageSectionContentProps>) => <Grid {...props} />
-)(
+const StyledGrid = styled(({ flex, ...props }: PageSectionContentProps) => (
+  <Grid {...props} />
+))(
   {
     flex: ({ flex }) => flex
   },
@@ -21,11 +17,13 @@ const StyledGrid = styled(
   }
 )
 
-const PageSectionContent: React.FC<
-  PageSectionContentProps & GridProps
-> = (props) => <StyledGrid item container {...props} />
+const PageSectionContent: React.FC<PageSectionContentProps> = (props) => (
+  <StyledGrid {...props} />
+)
 
 PageSectionContent.defaultProps = {
+  item: true,
+  container: true,
   flex: 'auto'
 }
 

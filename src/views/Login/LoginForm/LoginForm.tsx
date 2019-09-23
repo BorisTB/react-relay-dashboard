@@ -1,32 +1,22 @@
 import React from 'react'
-import { Button, TextField, styled } from '@material-ui/core'
-
-const ControlWrapper = styled(TextField)(({ theme }) => ({
-  transition: 'all 150ms ease',
-  '& input': {
-    background: theme.palette.background.paper,
-    transition: 'all 250ms ease',
-    '&:disabled': {
-      background: theme.palette.action.disabledBackground
-    }
-  },
-  '&:focus-within': {
-    boxShadow: theme.shadows[8],
-    transform: 'scale(1.1)',
-    zIndex: 1
-  }
-}))
+import { Button, TextField } from '@material-ui/core'
 
 export interface LoginFormProps {
-  onSubmit: (e: React.SyntheticEvent<HTMLFormElement, Event>) => void | Promise<void>
+  onSubmit: (
+    e: React.SyntheticEvent<HTMLFormElement, Event>
+  ) => void | Promise<void>
   disabled?: boolean
   register?: any
 }
 
-const LoginForm: React.FC<LoginFormProps> = ({ onSubmit, disabled, register }) => (
+const LoginForm: React.FC<LoginFormProps> = ({
+  onSubmit,
+  disabled,
+  register
+}) => (
   <form onSubmit={onSubmit} data-testid='login-form'>
     <fieldset disabled={disabled}>
-      <ControlWrapper
+      <TextField
         variant='outlined'
         margin='dense'
         fullWidth
@@ -40,7 +30,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSubmit, disabled, register }) =
         inputRef={register}
         autoFocus
       />
-      <ControlWrapper
+      <TextField
         variant='outlined'
         margin='dense'
         fullWidth
