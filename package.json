@@ -38,7 +38,8 @@
     "format": "prettier-tslint fix 'src/**/*.{ts,tsx}'",
     "postformat": "npm run relay",
     "relay": "relay-compiler",
-    "get:schema": "graphql get-schema -e default"
+    "get:schema": "graphql get-schema -e default",
+    "now-build": "npm run test"
   },
   "eslintConfig": {
     "extends": "react-app"

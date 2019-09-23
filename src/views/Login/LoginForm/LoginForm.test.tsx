@@ -96,20 +96,4 @@ describe('<LoginForm />', () => {
     expect(passwordInput).toBeDisabled()
     expect(submitButton).toBeDisabled()
   })
-
-  test('submits on pressing Enter', () => {
-    const onSubmit = jest.fn()
-    const { getByLabelText } = renderLoginForm({ onSubmit })
-    const emailInput = getByLabelText(EMAIL_LABEL)
-    const passwordInput = getByLabelText(PASSWORD_LABEL)
-
-    fireEvent.change(emailInput, { target: { value: 'email' } })
-    fireEvent.change(passwordInput, { target: { value: 'password' } })
-
-    emailInput.focus()
-
-    // fireEvent.keyPress(document.activeElement || document.body, { key: 'Enter', code: 13, charCode: 13 })
-
-    // expect(onSubmit).toHaveBeenCalled()
-  })
 })
